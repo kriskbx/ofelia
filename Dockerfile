@@ -13,7 +13,7 @@ FROM alpine:3.11
 LABEL ofelia.service=true
 LABEL ofelia.enabled=true
 
-RUN apk --no-cache add ca-certificates tzdata
+RUN apk --no-cache add ca-certificates tzdata git rsync openssh-client
 
 COPY --from=builder /go/bin/ofelia /usr/bin/ofelia
 
